@@ -25,7 +25,7 @@ function last_visited_post_shortcode($atts) {
     $post_id = get_user_meta($user_id, 'last_visited_post_id', true);
     $link = get_permalink($post_id);
     $post_title = get_the_title($post_id);
-    $post_excerpt = wp_trim_words(get_the_excerpt($post_id), 20, '...');
+    $post_excerpt = wp_trim_words(get_the_excerpt($post_id), 20, '...'); // change the number (20) to change the quantity of words in the excerpt.
     return '<div class="last_visited_post"><a href="' . $link . '"><h3>' . $post_title . '</h3>' . $post_excerpt . '</a></div>';
 }
 add_shortcode('last_visited_post', 'last_visited_post_shortcode');
